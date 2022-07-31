@@ -28,7 +28,6 @@ public class ExampleJUnit5Test {
 
     @Test
     void firstTest0(){
-        Assertions.assertTrue(3>2);
         System.out.println("    This is the @Test0");
     }
 
