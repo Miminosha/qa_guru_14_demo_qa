@@ -27,42 +27,16 @@ public class RegistrationFormWithPageObjectsTest {
                 .setEmail("Anna@anna.com")
                 .setGender("Female")
                 .setNumber("9998887766")
-                .setBirthDate("15", "June", "2004");
-        $("#submit").click();
-
-        registrationFormPage.checkResultsVisible()
+                .setBirthDate("15", "June", "2004")
+                .setSubject("English")
+                .setHobbies("Music")
+                .uploadPicture("lemur.jpg")
+                .setAddress("Address1")
+                .setStateCity("NCR", "Delhi")
+                .click("#submit")
+                .checkResultsVisible()
+                .checkResult("Student Email", "Anna@anna.com")
                 .checkResult("Date of Birth", "15 June,2004")
-                .checkResult("Student Email", "Anna@anna.com");
+                .checkResult("Hobbies", "Music")
+                .checkResult("State and City", "NCR Delhi");
 
-
-
-//
-//        $("#subjectsInput").setValue("English").pressEnter();
-//
-//        $("#hobbiesWrapper").$(byText("Music")).click();
-//
-//        $("#uploadPicture").uploadFromClasspath("lemur.jpg");
-//        $("#currentAddress").val("Address1");
-//        $("#state").click();
-//
-//        $("#stateCity-wrapper").$(byText("NCR")).click();
-//        $("#city").click();
-//
-//        $("#stateCity-wrapper").$(byText("Delhi")).click();
-
-
-//        $(".modal-dialog").should(appear);
-//        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-//        $(".table-responsive table").shouldHave(
-//                text("Anna Annina"),
-//                text("Anna@anna.com"),
-//                text("Other"),
-//                text("9998887766"));
-//                text("15 June,2004"),
-//                text("English"),
-//                text("Music"),
-//                text("lemur.jpg"),
-//                text("Address1"),
-//                text("NCR Delhi"));
-    }
-}

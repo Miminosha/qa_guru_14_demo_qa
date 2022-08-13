@@ -3,6 +3,7 @@ package com.demoqa.pages;
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
 import com.demoqa.pages.components.ResultsTableComponent;
+import com.demoqa.pages.components.StateCityComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -13,6 +14,8 @@ public class RegistrationFormPage {
 
     private CalendarComponent calendarComponent = new CalendarComponent();
     private ResultsTableComponent resultsTableComponent = new ResultsTableComponent();
+
+    private StateCityComponent stateCityComponent = new StateCityComponent();
 
     //Elements
 
@@ -90,6 +93,41 @@ public class RegistrationFormPage {
         return this;
     }
 
+    public RegistrationFormPage setSubject(String value){
+        $("#subjectsInput").setValue(value).pressEnter();
+
+        return this;
+    }
+
+    public RegistrationFormPage setHobbies(String value){
+        $("#hobbiesWrapper").$(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationFormPage uploadPicture(String value){
+        $("#uploadPicture").uploadFromClasspath(value);
+
+        return this;
+    }
+
+    public RegistrationFormPage setAddress(String value){
+        $("#currentAddress").val(value);
+
+        return this;
+    }
+
+    public RegistrationFormPage click (String value){
+        $(value).click();
+
+        return this;
+    }
+
+    public RegistrationFormPage setStateCity (String state, String city){
+        stateCityComponent.setStateCity(state, city);
+
+        return this;
+    }
 
 
 }
