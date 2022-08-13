@@ -39,4 +39,6 @@ public class RegistrationFormWithPageObjectsTest {
                 .checkResult("Date of Birth", "15 June,2004")
                 .checkResult("Hobbies", "Music")
                 .checkResult("State and City", "NCR Delhi");
+    }
+}
 
