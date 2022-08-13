@@ -40,5 +40,6 @@ public class RegistrationFormWithPageObjectsTest {
                 .checkResult("Hobbies", "Music")
                 .checkResult("State and City", "NCR Delhi");
     }
+
 }
 
