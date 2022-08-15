@@ -43,6 +43,5 @@ public class HW7PageObjectsWithRandomTest extends  TestBase {
         String expectedDateOfBirth = format("%s %s,%s", day, month, year);
         $(".table-responsive table").$(byText("Date of Birth"))
                 .parent().shouldHave(text(expectedDateOfBirth));
-
     }
 }
