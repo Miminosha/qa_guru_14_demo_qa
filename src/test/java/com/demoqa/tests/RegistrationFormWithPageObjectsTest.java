@@ -14,13 +14,13 @@ public class RegistrationFormWithPageObjectsTest {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @BeforeAll
-    static void configure(){
+    static void configure() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "760x840";
     }
 
     @Test
-    void fillFormWithMinimumDataTestTest(){
+    void fillFormWithMinimumDataTestTest() {
         registrationFormPage.openPage()
                 .setFirstName("Anna")
                 .setLastName("Annina")
@@ -40,3 +40,5 @@ public class RegistrationFormWithPageObjectsTest {
                 .checkResult("Hobbies", "Music")
                 .checkResult("State and City", "NCR Delhi");
 
+    }
+}
