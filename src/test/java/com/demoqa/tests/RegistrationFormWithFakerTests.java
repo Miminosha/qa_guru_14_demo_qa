@@ -58,8 +58,8 @@ public class RegistrationFormWithFakerTests extends TestBase {
         $(".react-datepicker__month-select").selectOption(month);
 
         $(".react-datepicker__year-select").selectOption(year);
-//        $(".react-datepicker__day--0" + day + ":not(.react-datepicker__day-outside-month").click();
-        $(format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month", day)).click();
+        $(".react-datepicker__day--0" + day + ":not(.react-datepicker__day-outside-month").click();
+//        $(format(".react-datepicker__day--0%s:not(.react-datepicker__day--outside-month", day)).click();
 
         $("#subjectsInput").setValue("English").pressEnter();
 

@@ -27,22 +27,19 @@ public class HW7PageObjectsWithRandomTest extends  TestBase {
             month,
             year,
             dateOfBirth,
-            gender,
-            address,
-            subject;
+            address;
 
     @BeforeEach
     void prepareTestData() {
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
         userEmail = faker.internet().emailAddress();
-        userNumber = faker.phoneNumber().subscriberNumber();
+        userNumber = faker.phoneNumber().subscriberNumber(10);
 //        dateOfBirth = faker.date().birthday().toString();
-        day = String.valueOf(faker.number().numberBetween(1, 31));
+        day = String.valueOf(faker.number().numberBetween(1, 30));
+//        day = "15";
         month = "June";
         year = faker.number().numberBetween(1990, 2005) + "";
-//        gender = ;
-        subject = faker.university().name();
         address = faker.address().fullAddress();
     }
 
@@ -56,13 +53,14 @@ public class HW7PageObjectsWithRandomTest extends  TestBase {
                 .setGender("Female")
                 .setNumber(userNumber)
                 .setBirthDate(day, month, year)
-                .setSubject(subject)
+                .setSubject("Math")
                 .setHobbies("Music")
                 .uploadPicture("lemur.jpg")
                 .setAddress(address)
                 .setStateCity("NCR", "Delhi")
                 .click("#submit")
                 .checkResultsVisible()
+                .checkResult("Student Name", firstName + " "+ lastName)
                 .checkResult("Student Email", userEmail)
                 .checkResult("Hobbies", "Music")
                 .checkResult("State and City", "NCR Delhi");
