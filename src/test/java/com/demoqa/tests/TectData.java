@@ -1,11 +1,23 @@
 package com.demoqa.tests;
 
-public class TectData {
+import com.github.javafaker.Faker;
 
-    static String firstName = "Anna",
-            lastName = "Annina",
-            day = "15",
+public class TectData {
+    public static Faker faker = new Faker();
+    static String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            userEmail = faker.internet().emailAddress(),
+            userNumber = faker.phoneNumber().subscriberNumber(10),
+            day = String.valueOf(faker.number().numberBetween(1, 30)),
             month = "June",
-            year = "2004";
-}
+            year = faker.number().numberBetween(1990, 2005) + "",
+            address = faker.address().fullAddress(),
+            gender = "Female",
+            subject = "Math",
+            hobby = "Music",
+            picture = "lemur.jpg",
+            state = "NCR",
+            city = "Delhi",
+            button = "#submit";
+    }
 
