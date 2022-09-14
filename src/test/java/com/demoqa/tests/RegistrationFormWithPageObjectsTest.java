@@ -3,6 +3,7 @@ package com.demoqa.tests;
 import com.codeborne.selenide.Configuration;
 import com.demoqa.pages.RegistrationFormPage;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
@@ -10,16 +11,11 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationFormWithPageObjectsTest {
+public class RegistrationFormWithPageObjectsTest extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
-    @BeforeAll
-    static void configure() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "760x840";
-    }
-
     @Test
+    @Tag("using")
     void fillFormWithMinimumDataTestTest() {
         registrationFormPage.openPage()
                 .setFirstName("Anna")
@@ -39,8 +35,5 @@ public class RegistrationFormWithPageObjectsTest {
                 .checkResult("Date of Birth", "15 June,2004")
                 .checkResult("Hobbies", "Music")
                 .checkResult("State and City", "NCR Delhi");
-    }
-}
-
     }
 }

@@ -1,18 +1,12 @@
 package com.demoqa.tests;
 
-import com.codeborne.selenide.Configuration;
 import com.demoqa.pages.RegistrationFormPage;
-import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.demoqa.tests.TectData.*;
+import static com.demoqa.tests.TestData.*;
 import static java.lang.String.format;
 
 public class HW7PageObjectsWithRandomTest extends  TestBase {

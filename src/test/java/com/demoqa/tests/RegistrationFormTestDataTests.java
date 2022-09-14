@@ -1,14 +1,12 @@
 package com.demoqa.tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.demoqa.tests.TectData.*;
+import static com.demoqa.tests.TestData.*;
 import static java.lang.String.format;
 
 public class RegistrationFormTestDataTests extends TestBase {

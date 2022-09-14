@@ -2,7 +2,7 @@ package com.demoqa.tests;
 
 import com.github.javafaker.Faker;
 
-public class TectData {
+public class TestData {
     public static Faker faker = new Faker();
     static String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
