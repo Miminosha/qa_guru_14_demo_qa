@@ -12,7 +12,8 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (System.getProperty("remote") != null) {
-            Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+//            Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+            Configuration.remote = System.getProperty("remote");
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
         }
