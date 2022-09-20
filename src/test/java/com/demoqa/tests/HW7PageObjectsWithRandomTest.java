@@ -1,6 +1,7 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationFormPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -14,6 +15,7 @@ public class HW7PageObjectsWithRandomTest extends  TestBase {
 
 
     @Test
+    @Tag("using")
     void fillFormWithRandomDataTest() {
         registrationFormPage.openPage()
                 .setFirstName(firstName)
