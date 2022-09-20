@@ -1,0 +1,15 @@
+5578239917:AAF64SvBIBQ8oQV5RuZFYveP-FuYJNl_kdc
+-1001336865990
+
+https://api.telegram.org/bot5578239917:AAF64SvBIBQ8oQV5RuZFYveP-FuYJNl_kdc/getUpdates
+
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1001336865990", "text": "This is a test from Miminosha", "disable_notification": true}' https://api.telegram.org/bot5578239917:AAF64SvBIBQ8oQV5RuZFYveP-FuYJNl_kdc/sendMessage
+
+curl --location --request POST 'https://api.telegram.org/bot5578239917:AAF64SvBIBQ8oQV5RuZFYveP-FuYJNl_kdc/sendMessage' header 'Content-Type: application/json' data-raw '{
+    "chat_id": "-1001336865990",
+    "text": "This is a test from Miminosha",
+    "disable_notification": true"
+    }'
+
+
+java "-DconfigFile=notifications/telegram.json" -jar notifications/allure-notifications-4.2.1.jar
